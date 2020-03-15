@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="raviModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Terms2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MOT ID" Type="int" />
+          <Property Name="Headword" Type="varchar" MaxLength="50" />
+          <Property Name="Definition" Type="varchar(max)" />
+          <Property Name="Full form" Type="varchar(max)" />
+          <Property Name="Abbreviations" Type="varchar" MaxLength="50" />
+          <Property Name="Synonyms" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="raviModelStoreContainer">
+          <EntitySet Name="Terms2" EntityType="Self.Terms2" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="raviModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Terms2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MOT_ID" Type="Int32" />
+          <Property Name="Headword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Definition" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Full_form" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Abbreviations" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Synonyms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="raviEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Terms2" EntityType="Self.Terms2" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="raviModelStoreContainer" CdmEntityContainer="raviEntities">
+          <EntitySetMapping Name="Terms2">
+            <EntityTypeMapping TypeName="raviModel.Terms2">
+              <MappingFragment StoreEntitySet="Terms2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MOT_ID" ColumnName="MOT ID" />
+                <ScalarProperty Name="Headword" ColumnName="Headword" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="Full_form" ColumnName="Full form" />
+                <ScalarProperty Name="Abbreviations" ColumnName="Abbreviations" />
+                <ScalarProperty Name="Synonyms" ColumnName="Synonyms" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

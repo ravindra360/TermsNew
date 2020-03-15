@@ -1,0 +1,66 @@
+﻿@model TermsNew.Models.Terms2
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Terms2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MOT_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOT_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Headword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Headword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Definition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Definition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Full_form)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Full_form)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Abbreviations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Abbreviations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Synonyms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Synonyms)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
